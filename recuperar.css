@@ -1,0 +1,109 @@
+body{
+    background-color: rgb(245, 245, 245)    ;
+}
+.container {
+    max-width: 55%;
+    margin: 0 auto;
+    padding: 0 8%;
+    background-color: rgb(245, 245, 245);
+}
+
+a{
+    white-space: nowrap;
+}
+
+.logo{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logotipo{
+    width: 20%;
+    height: 20%;
+}
+
+.logo h2{
+    color: rgb(251, 86, 48);
+    font-size: 30px;
+    margin-top: 4%;
+}
+.logo h2 + a{
+    margin-left: 6%;
+    font-size: 28px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-bottom: 2.2%;
+}
+.ajuda {
+    text-align: right;
+    margin-left: 115%;
+    white-space: nowrap;
+}
+.ajuda a{
+    font-size: 14px;
+    text-decoration: none;
+    color: rgb(251, 86, 48);
+}
+.login-form {
+    background-color: rgb(255, 255, 255);
+    padding: 4% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login-form h2 {
+    font-size: 25px;
+    margin-bottom: 1px;
+    text-align: center;
+}
+.caixa{
+    width: 30%;
+    margin: 0 auto;
+    padding: 0 2%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.caixa form{
+    width: 100%;
+    padding: 5% 0;
+}
+.input-group {
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.input-group input {
+    width: 80%;
+    height: 30px;
+    padding: 2%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 2px;
+}
+.input-group button{
+    background-color: rgb(251, 86, 48);
+    color: rgb(255, 255, 255);
+    width: 85%;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.seta-voltar {
+    position: absolute;
+    top: 25%;
+    left: 33%;
+    cursor: pointer;
+}
+.seta-voltar img{
+    width: 40px;
+    height: 50px;
+}
