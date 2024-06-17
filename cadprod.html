@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xhopii - Cadastro de Produtos</title>
     <link rel="icon" href="icones/favicon.ico">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="cadprod.css">
+    <link rel="stylesheet" href="css/cadprod.css">
 </head>
 <body>
     <header>
@@ -20,7 +19,7 @@
             </section>
         </section>
         <section class="head_2">
-            <a href="home.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="cadcliente.html">Cadastro de Clientes</a>
             <a href="cadfunc.html">Cadastro de Funcionários</a>
             <a href="cadprod.html">Cadastro de Produtos</a>
@@ -32,18 +31,15 @@
     <main>
         <section class="secform">
             <h1 class="cadprod">Cadastrar Produto</h1>
-            <form action="" class="form">
+            <form action="php/cadastroProds.php" class="form" enctype="multipart/form-data" method="post">
                 <div class="cad">
-                    <input type="text" class="nome" placeholder="Nome">
-                    <input type="text" class="fabricante" placeholder="Fabricante">
-                    <input type="text" class="desc" placeholder="Descrição">
-                    <input type="number" class="valor" placeholder="Valor">
-                    <input type="number" class="quant" placeholder="Quantidade">
+                    <input type="text" class="nome" placeholder="Nome" name="nome">
+                    <input type="text" class="fabricante" placeholder="Fabricante" name="fabricante">
+                    <input type="text" class="desc" placeholder="Descrição" name="desc">
+                    <input type="number" class="valor" placeholder="Valor" name="preco">
+                    <input type="number" class="quant" placeholder="Quantidade" name="quantidade">
                     <p class="selecfoto">Selecionar foto do produto</p>
-                    <div class="foto">
-                        <button class="arqfoto">Escolher arquivo</button>
-                        <p class="arquivo">Nenhum arquivo selecionado</p>
-                    </div>
+                    <input type="file" name="imagem" class="imagem" accept="image/*" required><br>
                     <button class="cadastrar">CADASTRAR</button>
                 </div>
             </form>

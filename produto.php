@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xhopii - Home</title>
     <link rel="icon" href="icones/favicon.ico">
-    <link rel="stylesheet" href="produto.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
             </section>
         </section>
         <section class="head_2">
-            <a href="home.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="cadcliente.html">Cadastro de Clientes</a>
             <a href="cadfunc.html">Cadastro de Funcionários</a>
             <a href="cadprod.html">Cadastro de Produtos</a>
@@ -30,22 +30,46 @@
         </section>
     </header>
     <main>
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "xhopii";
+
+            $conect = new mysqli($servername, $username, $password, $dbname);
+
+            if ($conect->connect_error) {
+                die("Erro: " . $conect->connect_error);
+            }
+            $id = $_POST['id'];
+
+            $puxar = "SELECT id, nome_prod, preco, fabricante, descricao, quantidade, imagem FROM produtos WHERE `id` LIKE '$id'";
+            $resul = $conect->query($puxar);
+
+            if ($resul->num_rows > 0) {
+                $row = $resul->fetch_assoc();
+            } else {
+                echo "Nenhum produto encontrado.";
+            }
+
+            $conect->close();
+        ?>
         <section class="corpo">
             <div class="conteudo">
-                <div class="menu-lado">
+                <!--<div class="menu-lado">
                     <img src="img/produto1.png" class="foto-lado">
                     <img src="img/produto2.png" class="foto-lado">
                     <img src="img/produto3.png" class="foto-lado">
                     <img src="img/produto4.png" class="foto-lado">
                     <img src="img/produto5.png" class="foto-lado">
-                </div>
-                <img src="img/produto1.png" class="produto-princ">
+                </div> -->
+                <?php echo "<img src='data:image/jpeg;base64," . base64_encode($row['imagem']) . "' alt='Imagem do Produto' class='produto-princ'>";?>
                 <div class="desc">
-                    <h2 class="titulo">Camisa Desenvolvedor Front-End CSS</h2>
-                    <p class="preco">R$56.90</p>
-                    <p class="estoque">171 Peças disponiveis</p>
+                    <?php echo "<h2 class='titulo'>" . $row['nome_prod'] . "</h2>";?>
+                    <?php echo "<p class='preco'>Preço: R$" . $row['preco'] . "</p>";?>
+                    <?php echo "<p class='estoque'>" . $row['quantidade'] . " Peça(s) Disponíveis</p>";?>
                     <h4>Modelos:</h4>
-                    <div class="btns">
+                    <!--<div class="btns">
                         <button class="btn-modelo">Preto</button>
                         <button class="btn-modelo">Azul</button>
                         <button class="btn-modelo">Verde</button>
@@ -59,8 +83,11 @@
                         <button class="btn-tam">G</button>
                         <button class="btn-tam">GG</button>
                     </div>
-                    <p>Tamanho Selecionado: P</p>
-                    <button class="btn-buy">Comprar Agora</button>
+                    <p>Tamanho Selecionado: P</p> -->
+                    <div class="compra">
+                        <form action="php/comprar.php" method="POST"><input type="hidden" name="id" value="<?php $row['id'] ?>"> <input type="submit" value="Comprar Agora" class="btn-buy"></form>
+                        <form action="php/addCarrinho.php" method="POST"><input type="hidden" name="id" value="<?php $row['id'] ?>"> <input type="submit" value="Adicionar ao Carrinho" class="btn-buy"></form>
+                    </div>
                 </div>
             </div>
         </section>

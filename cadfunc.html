@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xhopii - Cadastro de Funcionários</title>
     <link rel="icon" href="icones/favicon.ico">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="cadfunc.css">
+    <link rel="stylesheet" href="css/cadfunc.css">
 </head>
 <body>
     <header>
@@ -20,7 +19,7 @@
             </section>
         </section>
         <section class="head_2">
-            <a href="home.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="cadcliente.html">Cadastro de Clientes</a>
             <a href="cadfunc.html">Cadastro de Funcionários</a>
             <a href="cadprod.html">Cadastro de Produtos</a>
@@ -32,22 +31,19 @@
     <main>
         <section class="secform">
             <h1 class="cadfunc">Cadastrar Funcionário</h1>
-            <form action="" class="form">
+            <form action="php/cadFunc.php" class="form" method="post" enctype="multipart/form-data">
                 <div class="cad">
-                    <input type="text" class="nome" placeholder="Nome">
-                    <input type="text" class="sobrenome" placeholder="Sobrenome">
-                    <input type="number" class="CPF" placeholder="CPF">
-                    <input type="date" class="datanasc">
-                    <input type="number"class="tel" placeholder="Telefone">
-                    <input type="text" class="cargo" placeholder="Cargo/Função">
-                    <input type="number" class="salario" placeholder="Salário">
-                    <input type="email" class="email" placeholder="E-mail">
-                    <input type="password" class="senha" placeholder="Senha">
+                    <input type="text" class="nome" name="nome" placeholder="Nome">
+                    <input type="text" class="sobrenome" name="sobre" placeholder="Sobrenome">
+                    <input type="number" class="CPF" name="cpf" placeholder="CPF">
+                    <input type="date" class="datanasc" name="data">
+                    <input type="number"class="tel" name="telefone" placeholder="Telefone">
+                    <input type="text" class="cargo" name="cargo" placeholder="Cargo/Função">
+                    <input type="number" class="salario" name="sal" placeholder="Salário">
+                    <input type="email" class="email" name="email" placeholder="E-mail">
+                    <input type="password" class="senha" name="senha" placeholder="Senha">
                     <p class="selecfoto">Selecionar foto de perfil</p>
-                    <div class="foto">
-                        <button class="arqfoto">Escolher arquivo</button>
-                        <p class="arquivo">Nenhum arquivo selecionado</p>
-                    </div>
+                    <input type="file" name="imagem" class="imagem" accept="image/*" required><br>
                     <button class="cadastrar">CADASTRAR</button>
                 </div>
             </form>
