@@ -8,7 +8,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 
     $login = $_POST["login"];
     $senha = $_POST["senha"];
-    $busca = $conexao->prepare("SELECT `email`, `senha` FROM `usuarios` WHERE `email` = ? AND `senha` = ?");
+    $busca = $conexao->prepare("SELECT `nome`, `email`, `senha`, `tipoUsuario` FROM `usuarios` WHERE `email` = ? AND `senha` = ?");
     $busca->bind_param("ss", $login, $senha);
 
     $busca->execute();
@@ -19,7 +19,8 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 
         session_start();
 
-        $_SESSION["usuario"] = $row["login"];
+        $_SESSION["usuario"] = $row["nome"];
+        $_SESSION["email"] = $row["email"];
         $_SESSION["senha"] = $row["senha"];
 
         header("location:../");

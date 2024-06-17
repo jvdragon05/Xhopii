@@ -8,24 +8,51 @@
     <link rel="stylesheet" href="css/cadprod.css">
 </head>
 <body>
-    <header>
+<header>
         <section class="head_1">
             <section class="logo">
                 <img src="img/logo.png" class="logotipo">
                 <h2>Xhopii</h2>
             </section>
             <section class="sair">
-                <a href="index.html">Sair</a>
+                <?php
+                    session_start();
+                    if (isset($_SESSION["usuario"])) {
+                        if ($_SESSION["usuario"] == "") {
+                            echo
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
+                                    Cadastro/Login
+                                </button>
+                            </a>";
+                        } elseif ($_SESSION["usuario"] != "") {
+                            echo
+                            "<a href='conta.php' class='sair2'>
+                                <button class='sair2'>
+                                    Conta
+                                </button>
+                            </a>";
+                        }
+                    } else {
+                        echo
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
+                                    Cadastro/Login
+                                </button>
+                            </a>";
+                    }
+                ?>
             </section>
         </section>
+
         <section class="head_2">
             <a href="index.php">Home</a>
-            <a href="cadcliente.html">Cadastro de Clientes</a>
-            <a href="cadfunc.html">Cadastro de Funcionários</a>
-            <a href="cadprod.html">Cadastro de Produtos</a>
-            <a href="#">Ver Cliente</a>
-            <a href="#">Ver Funcionário</a>
-            <a href="visproduto.html">Ver Produtos</a>
+            <a href="cadcliente.php">Cadastro de Clientes</a>
+            <a href="cadfunc.php">Cadastro de Funcionários</a>
+            <a href="cadprod.php">Cadastro de Produtos</a>
+            <a href="php/clientes.php">Ver Cliente</a>
+            <a href="php/funcionarios.php">Ver Funcionário</a>
+            <a href="php/visproduto.html">Ver Produtos</a>
         </section>
     </header>
     <main>

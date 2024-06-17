@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xhopii - Redefinir senha</title>
     <link rel="icon" href="icones/favicon.ico">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/recuperar.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <header>
-        <div class="container">
+        <section class="head_1">
             <section class="logo">
-                <img src="img/logo.png" alt="Logo Xhopii" class="logotipo">
+                <img src="img/logo.png" class="logotipo">
                 <h2>Xhopii</h2>
-                <a>Redefinir senha</a>
-                <div class="ajuda">
-                    <a href="#">Precisa de ajuda?</a>
-                </div>
             </section>
-        </div>
+            <section class="sair">
+                
+            </section>
+        </section>
+
+        <section class="head_2">
+            <a href="index.php">Home</a>
+            <a href="cadcliente.php">Cadastro de Clientes</a>
+            <a href="cadfunc.php">Cadastro de Funcionários</a>
+            <a href="cadprod.php">Cadastro de Produtos</a>
+            <a href="php/clientes.php">Ver Cliente</a>
+            <a href="php/funcionarios.php">Ver Funcionário</a>
+            <a href="php/visproduto.html">Ver Produtos</a>
+        </section>
     </header>
 
     <main>  
@@ -29,7 +37,7 @@
                     <img src="img/seta.png">
                 </a>
                 <h2>Redefinir senha</h2>
-                <form action="home.html">
+                <form action="php/muda_senha.php" method="post">
                     <div class="input-group">
                         <input type="email" id="email" placeholder="Email" name="email" required>
 

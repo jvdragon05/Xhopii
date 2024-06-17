@@ -39,11 +39,19 @@ header{
     align-items: center;
     justify-content: right;
 }
-.sair a{
-    margin-right: 3%;
+.sair2 button{
+    margin-right: 3vw;
     color: white;
     text-decoration: none;
     font-size: 20px;
+    background-color: rgb(250, 85, 47);
+    border: none;
+}
+.sair2 button:hover{
+    color: rgb(250, 85, 47);
+    background-color: white;
+    transition: ease-in 1s;
+    border: none;
 }
 .head_2{
     display: flex;

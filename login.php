@@ -6,27 +6,61 @@
     <title>Xhopii - Login</title>
     <link rel="icon" href="icones/favicon.ico">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
-        <div class="container">
+        <section class="head_1">
             <section class="logo">
-                <img src="img/logo.png" alt="Logo Xhopii" class="logotipo">
+                <img src="img/logo.png" class="logotipo">
                 <h2>Xhopii</h2>
-                <a>Entre</a>
-                <div class="ajuda">
-                    <a href="#">Precisa de ajuda?</a>
-                </div>
             </section>
-        </div>
+            <section class="sair">
+                <?php
+                    session_start();
+                    if (isset($_SESSION["usuario"])) {
+                        if ($_SESSION["usuario"] == "") {
+                            echo
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
+                                    Cadastro/Login
+                                </button>
+                            </a>";
+                        } elseif ($_SESSION["usuario"] != "") {
+                            echo
+                            "<a href='conta.php' class='sair2'>
+                                <button class='sair2'>
+                                    Conta
+                                </button>
+                            </a>";
+                        }
+                    } else {
+                        echo
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
+                                    Cadastro/Login
+                                </button>
+                            </a>";
+                    }
+                ?>
+            </section>
+        </section>
+
+        <section class="head_2">
+            <a href="index.php">Home</a>
+            <a href="cadcliente.php">Cadastro de Clientes</a>
+            <a href="cadfunc.php">Cadastro de Funcionários</a>
+            <a href="cadprod.php">Cadastro de Produtos</a>
+            <a href="php/clientes.php">Ver Cliente</a>
+            <a href="php/funcionarios.php">Ver Funcionário</a>
+            <a href="php/visproduto.html">Ver Produtos</a>
+        </section>
     </header>
 
     <main>  
         <section class="login-form">
             <div class="caixa">
                 <h2>Login</h2>
-                <form action="login.php" method="post">
+                <form action="php/login.php" method="post">
                     <div class="input-group">
                         <input type="email" id="email" placeholder="Email" name="login" required>
                         <input type="password" id="password" placeholder="Senha" name="senha" required>

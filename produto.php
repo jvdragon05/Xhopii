@@ -24,9 +24,9 @@
             <a href="cadcliente.html">Cadastro de Clientes</a>
             <a href="cadfunc.html">Cadastro de Funcionários</a>
             <a href="cadprod.html">Cadastro de Produtos</a>
-            <a href="#">Ver Cliente</a>
-            <a href="#">Ver Funcionário</a>
-            <a href="visproduto.html">Ver Produtos</a>
+            <a href="php/clientes.php">Ver Cliente</a>
+            <a href="php/funcionarios.php">Ver Funcionário</a>
+            <a href="php/visproduto.html">Ver Produtos</a>
         </section>
     </header>
     <main>

@@ -21,23 +21,23 @@
                     if (isset($_SESSION["usuario"])) {
                         if ($_SESSION["usuario"] == "") {
                             echo
-                            "<a href='login.html'>
-                                <button>
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
                                     Cadastro/Login
                                 </button>
                             </a>";
                         } elseif ($_SESSION["usuario"] != "") {
                             echo
-                            "<a href='conta.php'>
-                                <button>
+                            "<a href='conta.php' class='sair2'>
+                                <button class='sair2'>
                                     Conta
                                 </button>
                             </a>";
                         }
                     } else {
                         echo
-                            "<a href='login.html'>
-                                <button>
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
                                     Cadastro/Login
                                 </button>
                             </a>";
@@ -47,10 +47,10 @@
         </section>
 
         <section class="head_2">
-            <a href="home.html">Home</a>
-            <a href="cadcliente.html">Cadastro de Clientes</a>
-            <a href="cadfunc.html">Cadastro de Funcionários</a>
-            <a href="cadprod.html">Cadastro de Produtos</a>
+            <a href="index.php">Home</a>
+            <a href="cadcliente.php">Cadastro de Clientes</a>
+            <a href="cadfunc.php">Cadastro de Funcionários</a>
+            <a href="cadprod.php">Cadastro de Produtos</a>
             <a href="php/clientes.php">Ver Cliente</a>
             <a href="php/funcionarios.php">Ver Funcionário</a>
             <a href="php/visproduto.html">Ver Produtos</a>

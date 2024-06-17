@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Cadastro de Funcionários</title>
+    <title>Xhopii - Cadastro de Clientes</title>
     <link rel="icon" href="icones/favicon.ico">
-    <link rel="stylesheet" href="css/cadfunc.css">
+    <link rel="stylesheet" href="css/cadcliente.css">
 </head>
 <body>
     <header>
@@ -15,31 +15,56 @@
                 <h2>Xhopii</h2>
             </section>
             <section class="sair">
-                <a href="index.html">Sair</a>
+                <?php
+                    session_start();
+                    if (isset($_SESSION["usuario"])) {
+                        if ($_SESSION["usuario"] == "") {
+                            echo
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
+                                    Cadastro/Login
+                                </button>
+                            </a>";
+                        } elseif ($_SESSION["usuario"] != "") {
+                            echo
+                            "<a href='conta.php' class='sair2'>
+                                <button class='sair2'>
+                                    Conta
+                                </button>
+                            </a>";
+                        }
+                    } else {
+                        echo
+                            "<a href='login.php' class='sair2'>
+                                <button class='sair2'>
+                                    Cadastro/Login
+                                </button>
+                            </a>";
+                    }
+                ?>
             </section>
         </section>
+
         <section class="head_2">
             <a href="index.php">Home</a>
-            <a href="cadcliente.html">Cadastro de Clientes</a>
-            <a href="cadfunc.html">Cadastro de Funcionários</a>
-            <a href="cadprod.html">Cadastro de Produtos</a>
-            <a href="#">Ver Cliente</a>
-            <a href="#">Ver Funcionário</a>
-            <a href="visproduto.html">Ver Produtos</a>
+            <a href="cadcliente.php">Cadastro de Clientes</a>
+            <a href="cadfunc.php">Cadastro de Funcionários</a>
+            <a href="cadprod.php">Cadastro de Produtos</a>
+            <a href="php/clientes.php">Ver Cliente</a>
+            <a href="php/funcionarios.php">Ver Funcionário</a>
+            <a href="php/visproduto.html">Ver Produtos</a>
         </section>
     </header>
     <main>
         <section class="secform">
-            <h1 class="cadfunc">Cadastrar Funcionário</h1>
-            <form action="php/cadFunc.php" class="form" method="post" enctype="multipart/form-data">
+            <h1 class="cadcliente">Cadastrar Cliente</h1>
+            <form action="php/cadCliente.php" class="form" enctype="multipart/form-data" method="post">
                 <div class="cad">
                     <input type="text" class="nome" name="nome" placeholder="Nome">
                     <input type="text" class="sobrenome" name="sobre" placeholder="Sobrenome">
                     <input type="number" class="CPF" name="cpf" placeholder="CPF">
                     <input type="date" class="datanasc" name="data">
                     <input type="number"class="tel" name="telefone" placeholder="Telefone">
-                    <input type="text" class="cargo" name="cargo" placeholder="Cargo/Função">
-                    <input type="number" class="salario" name="sal" placeholder="Salário">
                     <input type="email" class="email" name="email" placeholder="E-mail">
                     <input type="password" class="senha" name="senha" placeholder="Senha">
                     <p class="selecfoto">Selecionar foto de perfil</p>
@@ -52,7 +77,7 @@
     <footer>
         <section class="fot_top">
             <section class="fot_c">
-                <h5>Atendimento ao Cliente</h5>       
+                <h5>Atendimento ao Cliente</h5>
                 <a href="#">Central de Ajuda</a>
                 <a href="#">Como Comprar</a>
                 <a href="#">Métodos de Pagamento</a>
@@ -62,7 +87,7 @@
                 <a href="#">Ouvidoria</a> 
             </section>
             <section class="fot_c">
-                <h5>Sobre a Xhopii</h5>        
+                <h5>Sobre a Xhopii</h5>
                 <a href="#">Sobre Nós</a>
                 <a href="#">Políticas Xhopii</a>
                 <a href="#">Política de Privacidade</a>
@@ -70,7 +95,7 @@
                 <a href="#">Seja um Entregador Xhopii</a>
                 <a href="#">Ofertas Relâmpago</a>
                 <a href="#">Xhopii Blog</a>
-                <a href="#">Empresa</a>   
+                <a href="#">Empresa</a>
             </section>
             <section class="fot_c">
                 <h5>Pagamento</h5>
