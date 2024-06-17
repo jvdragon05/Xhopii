@@ -31,15 +31,15 @@
     <main>
         <section class="secform">
             <h1 class="cadcliente">Cadastrar Cliente</h1>
-            <form action="cadastros.php" class="form" enctype="multipart/form-data">
+            <form action="php/cadCliente.php" class="form" enctype="multipart/form-data" method="post">
                 <div class="cad">
-                    <input type="text" class="nome" placeholder="Nome">
-                    <input type="text" class="sobrenome" placeholder="Sobrenome">
-                    <input type="number" class="CPF" placeholder="CPF">
-                    <input type="date" class="datanasc">
-                    <input type="number"class="tel" placeholder="Telefone">
-                    <input type="email" class="email" placeholder="E-mail">
-                    <input type="password" class="senha" placeholder="Senha">
+                    <input type="text" class="nome" name="nome" placeholder="Nome">
+                    <input type="text" class="sobrenome" name="sobre" placeholder="Sobrenome">
+                    <input type="number" class="CPF" name="cpf" placeholder="CPF">
+                    <input type="date" class="datanasc" name="data">
+                    <input type="number"class="tel" name="telefone" placeholder="Telefone">
+                    <input type="email" class="email" name="email" placeholder="E-mail">
+                    <input type="password" class="senha" name="senha" placeholder="Senha">
                     <p class="selecfoto">Selecionar foto de perfil</p>
                     <input type="file" name="imagem" class="imagem" accept="image/*" required><br>
                     <button class="cadastrar">CADASTRAR</button>
