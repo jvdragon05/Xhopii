@@ -66,7 +66,7 @@ header{
 .head_2 a{
     color: white;
     text-decoration: none;
-    font-size: 15   px;
+    font-size: 15px;
     padding: 0 2%;
     height: 100%;
     display: flex;
@@ -108,7 +108,7 @@ form{
     justify-content: center;
     flex-direction: column;
 }
-.cadfunc{
+.cadcliente{
     color: #FB5630;
 }
 input:not(.imagem){

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca na Tabela</title>
-    <link href="estilo.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index2.css">
 </head>
 <body>
 <header>
@@ -18,14 +18,14 @@
             </section>
         </section>
         <section class="head_2">
-            <a href="index.html">Home</a>
-            <a href="cadcliente.html">Cadastro de Clientes</a>
-            <a href="cadfunc.html">Cadastro de Funcionários</a>
-            <a href="cadprod.html">Cadastro de Produtos</a>
+            <a href="index.php">Home</a>
+            <a href="cadcliente.php">Cadastro de Clientes</a>
+            <a href="cadfunc.php">Cadastro de Funcionários</a>
+            <a href="cadprod.php">Cadastro de Produtos</a>
             <a href="#" onclick="enviarDados('cliente')">Ver Cliente</a>
             <a href="#" onclick="enviarDados('funcionario')">Ver Funcionário</a>
             <a href="#" onclick="enviarDados('produtos')">Ver Produtos</a>
-            <a href="login.html">Login</a>
+            <a href="login.php">Login</a>
         </section>
     </header>
     <main>

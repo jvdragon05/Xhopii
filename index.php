@@ -54,6 +54,7 @@
             <a href="php/clientes.php">Ver Cliente</a>
             <a href="php/funcionarios.php">Ver Funcionário</a>
             <a href="php/visproduto.html">Ver Produtos</a>
+            <a href="conta.php">Conta</a>
         </section>
     </header>
     <main>
