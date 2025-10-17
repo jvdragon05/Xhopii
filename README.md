@@ -16,19 +16,34 @@ O repositório está organizado da seguinte forma:
 
 /
 ├── base/
+
 ├── controller/
+
 ├── css/
+
 ├── icones/
+
 ├── img/
+
 ├── model/
+
 ├── php/
+
 ├── view/
+
 ├── cadcliente.php
+
 ├── cadfunc.php
+
 ├── cadprod.php
+
 ├── login.php
+
 ├── xhopii.sql
+
 └── ... (outros arquivos)
+
+
 ## ⚙️ Instalação e Execução
 Para rodar este projeto localmente, siga os passos abaixo:
 
